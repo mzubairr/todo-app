@@ -20,12 +20,25 @@
             <input type="text" name="text" id="inputText" placeholder="Enter your task..." />
 
             <div class="buttons">
-                <button>Add Task</button>
-                <button>Delete All</button>
+                <button onclick="add()">Add Task</button>
+                <button onclick="deleteAll()" id="deleteAllItem">Delete All</button>
             </div>
             <ol class="list"></ol>
         </div>
     </main>
+
+    <footer>
+        <div class="footer">
+            <span>
+                <i class="fa-regular fa-copyright"></i>
+                2025 TodoApp
+            </span>
+
+            <span>
+                Created By Muhammad Zubair
+            </span>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/1888b00580.js" crossorigin="anonymous"></script>

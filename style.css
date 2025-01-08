@@ -9,15 +9,21 @@ body {
     background: linear-gradient(to right, #d4d8da, #b8d0d03e);
     background-image: url(./assets/todobg2.png);
     background-size: cover;
+    background-attachment: fixed;
     background-position: bottom;
     position: relative;
     overflow-x: hidden;
+    padding: 40px;
+    z-index: 5;
 }
 
 body .overlay {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.615);
 }
 
@@ -52,13 +58,17 @@ h1 {
     border: 1px solid rgba(0, 0, 0, 0.404);
     border-radius: 10px;
     outline: none;
-    text-decoration: underline rgba(18, 133, 255, 0.553);
+    text-decoration: underline #28aadd;
     margin-bottom: 30px;
     box-shadow: 2px 3px 8px 0px rgba(91, 91, 92, 0.591);
 }
 
 #inputText:focus {
-    box-shadow: 0 0 10px 1px rgba(18, 133, 255, 0.553);
+    box-shadow: 0 0 10px 1px #28aadd;
+}
+
+#deleteAllItem {
+    display: none;
 }
 
 .buttons {
@@ -86,4 +96,73 @@ h1 {
 .buttons *:hover {
     background: linear-gradient(to right, #30b1e2, #ebffff3e);
     transform: scale(1.1);
+}
+
+/* task list started */
+li {
+    background: linear-gradient(to bottom, #fffffffd, #b9cfe2c4);
+    margin-bottom: 20px;
+    padding: 18px;
+    font-size: 1.9rem;
+    list-style-type: lower-roman;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.466);
+    border-radius: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+li button {
+    margin: 1.8px;
+    background-color: #30b1e2;
+    color: #e2ffff;
+    padding: 13px 20px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.363);
+    transition: transform 0.4s ease, background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+li button:hover {
+    background: linear-gradient(to right, #618593, #00000087);
+    transform: scale(1.1);
+}
+
+li button i {
+    font-size: 22px;
+    padding-right: 5px;
+    transition: transform 0.1s ease;
+}
+
+li button i:hover {
+    transform: translateX(10px) rotate(20deg);
+}
+
+/* task list ended */
+
+/* footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+@media(max-width:425px) {
+    .footer {
+        display: none;
+    }
+
+    #inputText {
+        width: 100%;
+    }
+
 }
